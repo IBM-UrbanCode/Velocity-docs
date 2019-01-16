@@ -1,133 +1,134 @@
 site_name: UrbanCode Velocity
 
 docs_dir: docs
- 
-theme: windmill
 
-#theme_dir: cinder
+theme:
+  name: null
+  custom_dir: /mkdocs_windmill
+  static_templates: [404.html]
+  search_index_only: true
+  include_search_page: true
 
 nav:
-- Welcome: ucv_version_welcome.md
+- Welcome: /ucv_version_welcome.md
 - Overview: 
-  - Overview of UrbanCode Velocity: com.ibm.uvelocity.doc/topics/c_overview_se.md
-  - Introduction to releases and pipelines: com.ibm.uvelocity.doc/topics/c_overview_release.md
-  - Home page: com.ibm.uvelocity.doc/topics/c_overview_se_homepage.md
-  - Overview of the community edition: com.ibm.uvelocity.doc/topics/c_overview_ce.md
-  - Concepts: com.ibm.insights.doc/topics/c_overview_concepts.md
-  - Report overview: com.ibm.insights.doc/topics/c_overview_report.md
-  - Key terminology: com.ibm.uvelocity.doc/topics/c_overview_terms.md
-  - UrbanCode Velocity for GDPR Readiness: UCDVelocityGDPRguidelines.md
-  - Setup the environment: com.ibm.uvelocity.doc/topics/c_node_setup.md
-  - Getting started: com.ibm.insights.doc/topics/t_setup_gettingstarted.md
+  - Overview of UrbanCode Velocity: com.uvelocity.doc/topics/c_overview_se.md
+  - Introduction to releases and pipelines: com.uvelocity.doc/topics/c_overview_release.md
+  - Home page: com.uvelocity.doc/topics/c_overview_se_homepage.md
+  - Overview of the community edition: com.uvelocity.doc/topics/c_overview_ce.md
+  - Concepts: com.insights.doc/topics/c_overview_concepts.md
+  - Report overview: com.insights.doc/topics/c_overview_report.md
+  - Key terminology: com.uvelocity.doc/topics/c_overview_terms.md
+  - UrbanCode Velocity for GDPR Readiness: /UCDVelocityGDPRguidelines.md
+  - Setup the environment: com.uvelocity.doc/topics/c_node_setup.md
+  - Getting started: com.insights.doc/topics/t_setup_gettingstarted.md
 - Installing the standard edition: 
-  - Installing UrbanCode Velocity SE: com.ibm.uvelocity.doc/topics/c_install_se_roadmap.md
-  - Installing onto Docker Compose: com.ibm.uvelocity.doc/topics/t_install_se_docker.md
-  - Installing on Minikube: com.ibm.uvelocity.doc/topics/t_install_minikube.md
-  - Installing on IBM Cloud Private: com.ibm.uvelocity.doc/topics/t_install_ICP.md
-  - Installing onto OpenShift: com.ibm.uvelocity.doc/topics/t_install_se_openShift.md
-  - Uninstalling the server: com.ibm.uvelocity.doc/topics/t_install_se_remove_ucv.md
+  - Installing UrbanCode Velocity SE: com.uvelocity.doc/topics/c_install_se_roadmap.md
+  - Installing onto Docker Compose: com.uvelocity.doc/topics/t_install_se_docker.md
+  - Installing on Minikube: com.uvelocity.doc/topics/t_install_minikube.md
+  - Installing on IBM Cloud Private: com.uvelocity.doc/topics/t_install_ICP.md
+  - Installing onto OpenShift: com.uvelocity.doc/topics/t_install_se_openShift.md
+  - Uninstalling the server: com.uvelocity.doc/topics/t_install_se_remove_ucv.md
   - Installing the Community Edition:
-    - Installation roadmap: com.ibm.insights.doc/topics/c_install_roadmap.md
-    - System requirements: com.ibm.insights.doc/topics/c_install_requirements.md
-    - Installing as a Docker Compose application: com.ibm.insights.doc/topics/t_install_docker.md
-    - Installing into a Kubernetes cluster: com.ibm.insights.doc/topics/t_install_kubernetes.md
-    - Kubernetes configuration properties: com.ibm.insights.doc/topics/c_install_kubernetes_config.md
+    - Installation roadmap: com.insights.doc/topics/c_install_roadmap.md
+    - System requirements: com.insights.doc/topics/c_install_requirements.md
+    - Installing as a Docker Compose application: com.insights.doc/topics/t_install_docker.md
+    - Installing into a Kubernetes cluster: com.insights.doc/topics/t_install_kubernetes.md
+    - Kubernetes configuration properties: com.insights.doc/topics/c_install_kubernetes_config.md
 
 - Administration:
-  - Overview: com.ibm.uvelocity.doc/topics/c_node_admin.md
+  - Overview: com.uvelocity.doc/topics/c_node_admin.md
   - Managing integrations:
-    - Overview: com.ibm.uvelocity.doc/topics/c_node_integrations.md
-    - Managing UrbanCode Deploy integrations: com.ibm.uvelocity.doc/topics/t_integration_UCD.md
-    - Managing Jenkins integrations: com.ibm.uvelocity.doc/topics/t_integration_Jenkins.md
-    - Integrating deployment risk analysis: com.ibm.uvelocity.doc/topics/c_integration_dra.md
-    - Integrating with JIRA: com.ibm.uvelocity.doc/topics/c_integration_jira.md
-    - Integrating with ServiceNow: com.ibm.uvelocity.doc/topics/c_integration_servicenow.md
-  - Configuring an email server: com.ibm.uvelocity.doc/topics/t_admin_emailServer.md
-  - Calendar settings: com.ibm.uvelocity.doc/topics/t_admin_calendar.md
+    - Overview: com.uvelocity.doc/topics/c_node_integrations.md
+    - Managing UrbanCode Deploy integrations: com.uvelocity.doc/topics/t_integration_UCD.md
+    - Managing Jenkins integrations: com.uvelocity.doc/topics/t_integration_Jenkins.md
+    - Integrating deployment risk analysis: com.uvelocity.doc/topics/c_integration_dra.md
+    - Integrating with JIRA: com.uvelocity.doc/topics/c_integration_jira.md
+    - Integrating with ServiceNow: com.uvelocity.doc/topics/c_integration_servicenow.md
+  - Configuring an email server: com.uvelocity.doc/topics/t_admin_emailServer.md
+  - Calendar settings: com.uvelocity.doc/topics/t_admin_calendar.md
   - Security:
-    - Security overview: com.ibm.uvelocity.doc/topics/c_node_security.md
-    - Roles and permissions: com.ibm.uvelocity.doc/topics/c_admin_roles.md
-    - Managing users: com.ibm.uvelocity.doc/topics/t_admin_authentication.md
-    - Managing user groups: com.ibm.uvelocity.doc/topics/cr_security_groups.md
-    - Managing teams: com.ibm.uvelocity.doc/topics/cr_security_teams.md
-    - Managing user permissions: com.ibm.uvelocity.doc/topics/cr_security_permissions.md
-    - Managing UrbanCode Deploy teams: com.ibm.uvelocity.doc/topics/cr_security_UCDteams.md
+    - Security overview: com.uvelocity.doc/topics/c_node_security.md
+    - Roles and permissions: com.uvelocity.doc/topics/c_admin_roles.md
+    - Managing users: com.uvelocity.doc/topics/t_admin_authentication.md
+    - Managing user groups: com.uvelocity.doc/topics/cr_security_groups.md
+    - Managing teams: com.uvelocity.doc/topics/cr_security_teams.md
+    - Managing user permissions: com.uvelocity.doc/topics/cr_security_permissions.md
+    - Managing UrbanCode Deploy teams: com.uvelocity.doc/topics/cr_security_UCDteams.md
   - License management:
-    - License overview: com.ibm.uvelocity.doc/topics/licenseManage.md
-    - License scenarios: com.ibm.uvelocity.doc/topics/license_scenarios.md
-    - Managing licenses: com.ibm.uvelocity.doc/topics/license_apply.md
+    - License overview: com.uvelocity.doc/topics/licenseManageHCL.md
   - Administration for the Community Edition:
-    - Managing logical environments: com.ibm.insights.doc/topics/t_admin_environments.md
-    - Environment mapping: com.ibm.insights.doc/topics/t_admin_environments_map.md
-    - Managing lines of businesses: com.ibm.insights.doc/topics/t_admin_linesofbusiness.md
-    - Mapping lines of business: com.ibm.insights.doc/topics/t_admin_linesofbusiness_map.md
+    - Managing logical environments: com.insights.doc/topics/t_admin_environments.md
+    - Environment mapping: com.insights.doc/topics/t_admin_environments_map.md
+    - Managing lines of businesses: com.insights.doc/topics/t_admin_linesofbusiness.md
+    - Mapping lines of business: com.insights.doc/topics/t_admin_linesofbusiness_map.md
 
 - Release management:
-  - Release management overview: com.ibm.crelease.doc/topics/c_node_releases.md
-  - Managing a release: com.ibm.crelease.doc/topics/cr_release_managedetails.md
-  - Managing releases: com.ibm.crelease.doc/topics/cr_release_manage.md
-  - Creating releases: com.ibm.crelease.doc/topics/cr_release_create.md
-  - Archiving releases: com.ibm.crelease.doc/topics/cr_release_archive.md
-  - Events and tags: com.ibm.crelease.doc/topics/cr_events_ov.md
-  - Restoring archived releases, plans, and templates: com.ibm.crelease.doc/topics/cr_restore_archive.md
+  - Release management overview: com.crelease.doc/topics/c_node_releases.md
+  - Managing a release: com.crelease.doc/topics/cr_release_managedetails.md
+  - Managing releases: com.crelease.doc/topics/cr_release_manage.md
+  - Creating releases: com.crelease.doc/topics/cr_release_create.md
+  - Archiving releases: com.crelease.doc/topics/cr_release_archive.md
+  - Events and tags: com.crelease.doc/topics/cr_events_ov.md
+  - Restoring archived releases, plans, and templates: com.crelease.doc/topics/cr_restore_archive.md
   - Deployment plans:
-    - Overview: com.ibm.crelease.doc/topics/cr_deployPlan_ov.md
-    - Managing deployment plans: com.ibm.crelease.doc/topics/cr_deployplan_manage.md
-    - Creating deployment plans: com.ibm.crelease.doc/topics/cr_deployPlan_create.md
-    - Importing tasks into deployment plans: com.ibm.crelease.doc/topics/cr_deployPlan_importTasks.md
-    - Copying deployment plans: com.ibm.crelease.doc/topics/cr_deployPlan_promote.md
-    - Managing deployment plan templates: com.ibm.crelease.doc/topics/cr_deployPlan_template.md
-    - Archiving deployment plans: com.ibm.crelease.doc/topics/cr_deployPlan_archive.md
+    - Overview: com.crelease.doc/topics/cr_deployPlan_ov.md
+    - Managing deployment plans: com.crelease.doc/topics/cr_deployplan_manage.md
+    - Creating deployment plans: com.crelease.doc/topics/cr_deployPlan_create.md
+    - Importing tasks into deployment plans: com.crelease.doc/topics/cr_deployPlan_importTasks.md
+    - Copying deployment plans: com.crelease.doc/topics/cr_deployPlan_promote.md
+    - Managing deployment plan templates: com.crelease.doc/topics/cr_deployPlan_template.md
+    - Archiving deployment plans: com.crelease.doc/topics/cr_deployPlan_archive.md
   - Running deployments:
-    - Overview: com.ibm.crelease.doc/topics/cr_deployRun_ov.md
-    - Starting deployments manually: com.ibm.crelease.doc/topics/cr_deployRun_manual.md
-    - Resolving tasks: com.ibm.crelease.doc/topics/cr_deployRun_taskResolve.md
-    - Importing tasks into deployment plans: com.ibm.crelease.doc/topics/cr_deployPlan_importTasks.md
-    - Running scheduled deployments: com.ibm.crelease.doc/topics/cr_deployRun_scheduled.md
+    - Overview: com.crelease.doc/topics/cr_deployRun_ov.md
+    - Starting deployments manually: com.crelease.doc/topics/cr_deployRun_manual.md
+    - Resolving tasks: com.crelease.doc/topics/cr_deployRun_taskResolve.md
+    - Importing tasks into deployment plans: com.crelease.doc/topics/cr_deployPlan_importTasks.md
+    - Running scheduled deployments: com.crelease.doc/topics/cr_deployRun_scheduled.md
 - Tasks:
-  - Tasks overview: com.ibm.crelease.doc/topics/cr_task_ov.md
-  - Managing tasks: com.ibm.crelease.doc/topics/cr_task_manage.md
-  - Creating tasks: com.ibm.crelease.doc/topics/cr_task_create.md
-  - Managing task dependencies: com.ibm.crelease.doc/topics/cr_task_depend.md
-  - Creating task groups: com.ibm.crelease.doc/topics/cr_task_groups.md
-  - Managing task groups: com.ibm.crelease.doc/topics/cr_task_groups_manage.md
-  - Managing task tags: com.ibm.crelease.doc/topics/cr_task_tags.md
-  - Creating run another plan tasks: com.ibm.crelease.doc/topics/cr_taskType_another.md
-  - Creating delay tasks: com.ibm.crelease.doc/topics/cr_taskType_delay.md
-  - Deployment risk analysis tasks: com.ibm.crelease.doc/topics/cr_taskType_DRA.md
-  - Creating email tasks: com.ibm.crelease.doc/topics/cr_taskType_email.md
-  - Creating header/note tasks: com.ibm.crelease.doc/topics/cr_taskType_header.md
-  - Creating Jenkins tasks: com.ibm.crelease.doc/topics/cr_taskType_Jenkins.md
-  - Creating manual tasks: com.ibm.crelease.doc/topics/cr_taskType_manual.md
-  - Creating ServiceNow tasks: com.ibm.crelease.doc/topics/cr_taskType_serviceNow.md
-  - Creating UrbanCode Deploy tasks: com.ibm.crelease.doc/topics/cr_taskType_UCD.md
-  - Creating wait for approval tasks: com.ibm.crelease.doc/topics/cr_taskType_waitForApproval.md
+  - Tasks overview: com.crelease.doc/topics/cr_task_ov.md
+  - Managing tasks: com.crelease.doc/topics/cr_task_manage.md
+  - Creating tasks: com.crelease.doc/topics/cr_task_create.md
+  - Managing task dependencies: com.crelease.doc/topics/cr_task_depend.md
+  - Creating task groups: com.crelease.doc/topics/cr_task_groups.md
+  - Managing task groups: com.crelease.doc/topics/cr_task_groups_manage.md
+  - Managing task tags: com.crelease.doc/topics/cr_task_tags.md
+  - Creating run another plan tasks: com.crelease.doc/topics/cr_taskType_another.md
+  - Creating delay tasks: com.crelease.doc/topics/cr_taskType_delay.md
+  - Deployment risk analysis tasks: com.crelease.doc/topics/cr_taskType_DRA.md
+  - Creating email tasks: com.crelease.doc/topics/cr_taskType_email.md
+  - Creating header/note tasks: com.crelease.doc/topics/cr_taskType_header.md
+  - Creating Jenkins tasks: com.crelease.doc/topics/cr_taskType_Jenkins.md
+  - Creating manual tasks: com.crelease.doc/topics/cr_taskType_manual.md
+  - Creating ServiceNow tasks: com.crelease.doc/topics/cr_taskType_serviceNow.md
+  - Creating UrbanCode Deploy tasks: com.crelease.doc/topics/cr_taskType_UCD.md
+  - Creating wait for approval tasks: com.crelease.doc/topics/cr_taskType_waitForApproval.md
 - Properties:
-  - Properties overview: com.ibm.crelease.doc/topics/cr_properties_ov.md
-  - Creating properties: com.ibm.crelease.doc/topics/cr_properties_create.md
-  - Using properties: com.ibm.crelease.doc/topics/cr_properties_ref.md
+  - Properties overview: com.crelease.doc/topics/cr_properties_ov.md
+  - Creating properties: com.crelease.doc/topics/cr_properties_create.md
+  - Using properties: com.crelease.doc/topics/cr_properties_ref.md
 - Pipelines: 
-  - Pipelines overview: com.ibm.crelease.doc/topics/cr_pipelines_ov.md
-  - Creating pipelines: com.ibm.crelease.doc/topics/cr_pipeline_create.md
-  - Managing pipelines: com.ibm.crelease.doc/topics/cr_pipeline_manage.md
-  - Running deployments with pipelines: com.ibm.crelease.doc/topics/cr_pipeline_run.md
+  - Pipelines overview: com.crelease.doc/topics/cr_pipelines_ov.md
+  - Creating pipelines: com.crelease.doc/topics/cr_pipeline_create.md
+  - Managing pipelines: com.crelease.doc/topics/cr_pipeline_manage.md
+  - Running deployments with pipelines: com.crelease.doc/topics/cr_pipeline_run.md
 - Reports: 
-  - Overview: com.ibm.uvelocity.doc/topics/c_node_reports.md
-  - Custom reports: com.ibm.insights.doc/topics/c_reports_custom.md
-  - Cards: com.ibm.insights.doc/topics/c_reports_card.md
-  - Charts: com.ibm.insights.doc/topics/c_reports_charts.md
-  - Delivery Transformation reports: com.ibm.insights.doc/topics/c_reports_efficiency.md
-  - Events: com.ibm.insights.doc/topics/c_reports_events.md
+  - Overview: com.uvelocity.doc/topics/c_node_reports.md
+  - Custom reports: com.insights.doc/topics/c_reports_custom.md
+  - Cards: com.insights.doc/topics/c_reports_card.md
+  - Charts: com.insights.doc/topics/c_reports_charts.md
+  - Delivery Transformation reports: com.insights.doc/topics/c_reports_efficiency.md
+  - Events: com.insights.doc/topics/c_reports_events.md
 - How to: 
-  - About: com.ibm.uvelocity.doc/topics/c_node_howto.md
-  - Access the user interface: com.ibm.insights.doc/topics/t_ui_access.md
-  - Create a report: com.ibm.insights.doc/topics/t_report_create.md
-  - Filter report data: com.ibm.insights.doc/topics/t_filter_data.md
-  - Format Custom reports: com.ibm.insights.doc/topics/t_reports_format.md
-  - Manage reports: com.ibm.insights.doc/topics/t_report_manage.md
-  - Share reports: com.ibm.insights.doc/topics/t_reports_share.md
+  - About: com.uvelocity.doc/topics/c_node_howto.md
+  - Access the user interface: com.insights.doc/topics/t_ui_access.md
+  - Create a report: com.insights.doc/topics/t_report_create.md
+  - Filter report data: com.insights.doc/topics/t_filter_data.md
+  - Format Custom reports: com.insights.doc/topics/t_reports_format.md
+  - Manage reports: com.insights.doc/topics/t_report_manage.md
+  - Share reports: com.insights.doc/topics/t_reports_share.md
 - Troubleshooting: 
-  - Overview: com.ibm.uvelocity.doc/topics/c_node_troubleshoot.md
-  - Contacting support: com.ibm.insights.doc/topics/c_troubleshoot_contactsupport.md
-  - Viewing log files: com.ibm.insights.doc/topics/t_troubleshoot_logfiles.md
-  - Types of problems and checks to perform: com.ibm.insights.doc/topics/c_troubleshoot_problemtypes.md
+  - Overview: com.uvelocity.doc/topics/c_node_troubleshoot.md
+  - Contacting support: com.insights.doc/topics/c_troubleshoot_contactsupport.md
+  - Viewing log files: com.insights.doc/topics/t_troubleshoot_logfiles.md
+  - Types of problems and checks to perform: com.insights.doc/topics/c_troubleshoot_problemtypes.md
