@@ -1,17 +1,26 @@
-site_name: UrbanCode Velocity
+site_name: 'UrbanCode Velocity'
+site_description: 'UrbanCode documentation.'
+site_author: 'UrbanCode'
+
+site_url: https://urbancode.hcldoc.com/velocity/112/
 
 docs_dir: docs
 
 theme:
   name: null
-  custom_dir: /mkdocs_windmill
+
+  # Set WINDMILL_DIR Environment Variable to use the below script.
+  # Otherwise, specify the full path
+  # custom_dir: <path-to-urbancode-windmill-theme>
+  custom_dir: !!python/object/apply:os.getenv ["WINDMILL_DIR"]
+
   static_templates: [404.html]
   search_index_only: true
   include_search_page: true
 
 nav:
-- Welcome: /ucv_version_welcome.md
-- Overview: 
+- Welcome: ucv_version_welcome.md
+- Overview:
   - Overview of UrbanCode Velocity: com.uvelocity.doc/topics/c_overview_se.md
   - Introduction to releases and pipelines: com.uvelocity.doc/topics/c_overview_release.md
   - Home page: com.uvelocity.doc/topics/c_overview_se_homepage.md
@@ -19,10 +28,10 @@ nav:
   - Concepts: com.insights.doc/topics/c_overview_concepts.md
   - Report overview: com.insights.doc/topics/c_overview_report.md
   - Key terminology: com.uvelocity.doc/topics/c_overview_terms.md
-  - UrbanCode Velocity for GDPR Readiness: /UCDVelocityGDPRguidelines.md
+  - UrbanCode Velocity for GDPR Readiness: UCDVelocityGDPRguidelines.md
   - Setup the environment: com.uvelocity.doc/topics/c_node_setup.md
   - Getting started: com.insights.doc/topics/t_setup_gettingstarted.md
-- Installing the standard edition: 
+- Installing the standard edition:
   - Installing UrbanCode Velocity SE: com.uvelocity.doc/topics/c_install_se_roadmap.md
   - Installing onto Docker Compose: com.uvelocity.doc/topics/t_install_se_docker.md
   - Installing on Minikube: com.uvelocity.doc/topics/t_install_minikube.md
@@ -35,7 +44,6 @@ nav:
     - Installing as a Docker Compose application: com.insights.doc/topics/t_install_docker.md
     - Installing into a Kubernetes cluster: com.insights.doc/topics/t_install_kubernetes.md
     - Kubernetes configuration properties: com.insights.doc/topics/c_install_kubernetes_config.md
-
 - Administration:
   - Overview: com.uvelocity.doc/topics/c_node_admin.md
   - Managing integrations:
@@ -62,7 +70,6 @@ nav:
     - Environment mapping: com.insights.doc/topics/t_admin_environments_map.md
     - Managing lines of businesses: com.insights.doc/topics/t_admin_linesofbusiness.md
     - Mapping lines of business: com.insights.doc/topics/t_admin_linesofbusiness_map.md
-
 - Release management:
   - Release management overview: com.crelease.doc/topics/c_node_releases.md
   - Managing a release: com.crelease.doc/topics/cr_release_managedetails.md
@@ -107,19 +114,19 @@ nav:
   - Properties overview: com.crelease.doc/topics/cr_properties_ov.md
   - Creating properties: com.crelease.doc/topics/cr_properties_create.md
   - Using properties: com.crelease.doc/topics/cr_properties_ref.md
-- Pipelines: 
+- Pipelines:
   - Pipelines overview: com.crelease.doc/topics/cr_pipelines_ov.md
   - Creating pipelines: com.crelease.doc/topics/cr_pipeline_create.md
   - Managing pipelines: com.crelease.doc/topics/cr_pipeline_manage.md
   - Running deployments with pipelines: com.crelease.doc/topics/cr_pipeline_run.md
-- Reports: 
+- Reports:
   - Overview: com.uvelocity.doc/topics/c_node_reports.md
   - Custom reports: com.insights.doc/topics/c_reports_custom.md
   - Cards: com.insights.doc/topics/c_reports_card.md
   - Charts: com.insights.doc/topics/c_reports_charts.md
   - Delivery Transformation reports: com.insights.doc/topics/c_reports_efficiency.md
   - Events: com.insights.doc/topics/c_reports_events.md
-- How to: 
+- How to:
   - About: com.uvelocity.doc/topics/c_node_howto.md
   - Access the user interface: com.insights.doc/topics/t_ui_access.md
   - Create a report: com.insights.doc/topics/t_report_create.md
@@ -127,8 +134,19 @@ nav:
   - Format Custom reports: com.insights.doc/topics/t_reports_format.md
   - Manage reports: com.insights.doc/topics/t_report_manage.md
   - Share reports: com.insights.doc/topics/t_reports_share.md
-- Troubleshooting: 
+- Troubleshooting:
   - Overview: com.uvelocity.doc/topics/c_node_troubleshoot.md
   - Contacting support: com.insights.doc/topics/c_troubleshoot_contactsupport.md
   - Viewing log files: com.insights.doc/topics/t_troubleshoot_logfiles.md
   - Types of problems and checks to perform: com.insights.doc/topics/c_troubleshoot_problemtypes.md
+
+markdown_extensions:
+  - toc:
+      permalink: '#'
+
+extra:
+  history_buttons: false
+  version: 1.1.2
+  article_nav_top: false
+  article_nav_bottom: false
+  logo: img\UClogo.png
