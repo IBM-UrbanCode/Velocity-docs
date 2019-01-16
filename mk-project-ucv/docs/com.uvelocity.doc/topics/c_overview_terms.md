@@ -67,5 +67,5 @@ This topic included terms and concepts used within the UrbanCode Velocity enviro
     Represents an UrbanCode Deploy application snapshot.
 
 
-**Parent topic:** [Overview](../topics/c_node_overview.md)
+
 

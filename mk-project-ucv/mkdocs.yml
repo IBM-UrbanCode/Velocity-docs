@@ -28,7 +28,7 @@ nav:
   - Concepts: com.insights.doc/topics/c_overview_concepts.md
   - Report overview: com.insights.doc/topics/c_overview_report.md
   - Key terminology: com.uvelocity.doc/topics/c_overview_terms.md
-  - UrbanCode Velocity for GDPR Readiness: UCDVelocityGDPRguidelines.md
+  - UrbanCode Velocity for GDPR Readiness: com.uvelocity.doc/topics/UCDVelocityGDPRguidelines.md
   - Setup the environment: com.uvelocity.doc/topics/c_node_setup.md
   - Getting started: com.insights.doc/topics/t_setup_gettingstarted.md
 - Installing the standard edition:

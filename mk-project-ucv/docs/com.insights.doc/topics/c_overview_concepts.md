@@ -28,5 +28,5 @@ If you have administrator privileges, there are several functions available by c
 -   Map environments into groups
 -   Create logical line of business groups
 
-**Parent topic:** [Overview](../../com.uvelocity.doc/topics/c_node_overview.md)
+
 

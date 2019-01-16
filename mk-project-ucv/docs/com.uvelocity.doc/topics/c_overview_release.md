@@ -6,5 +6,5 @@ Releases can represent all kinds of events, from major events in the life of you
 
 Pipelines automate releases. Pipeline stages organize input and jobs as your code is built, deployed, and tested. Stages accept input from either source control repositories \(SCM\) or other external applications, such as UrbanCode Deploy. Stages and jobs run serially; they enable flow control for your work.
 
-**Parent topic:** [Overview](../topics/c_node_overview.md)
+
 

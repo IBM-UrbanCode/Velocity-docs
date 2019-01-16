@@ -37,7 +37,7 @@ In outline, the installation process consists of the following general steps:
 
     [Installing UrbanCode Velocity with Docker Compose](t_install_se_docker.md#).
 
-    [Installing into a Kubernetes cluster](t_install_se_kubernetes.md#).
+    [Installing into a Kubernetes cluster](t_install_minikube.md#)
 
     [Installing as an OpenShift application](t_install_se_openShift.md#)
 

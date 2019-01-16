@@ -41,5 +41,5 @@ There are several predefined reports which are ready to use after installation a
 
 Report data is displayed using line graphs, bar graphs, or tables. The format presented is dependent on the data being displayed. Hovering your pointer in various points in the line and bar graphs displays data details. ![](../images/graphs_overviewsample.jpg) 
 
-**Parent topic:** [Overview](../../com.uvelocity.doc/topics/c_node_overview.md)
+
 

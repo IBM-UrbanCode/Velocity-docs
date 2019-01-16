@@ -8,5 +8,5 @@ UrbanCode Velocity is an enterprise-scale release management service that suppor
 
 Integrating with your UrbanCode Deploy environments, you can request reports based on your criterion from data retrieved from your UrbanCode Deploy environment. In addition, to reports that your create there are several out-of-the-box reports that you can use right away. Using filters, you can customize the data to view.
 
-**Parent topic:** [Overview](../topics/c_node_overview.md)
+
 

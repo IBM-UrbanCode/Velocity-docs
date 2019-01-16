@@ -16,5 +16,4 @@ New applications to deploy, team changes, environment changes, and other things 
 
 Reports display in graphical charts and tables making it easy to view trends. And, you can focus in on details.
 
-**Parent topic:** [Overview](../topics/c_node_overview.md)
 

@@ -15,5 +15,3 @@ If you have administrator privileges, there are several functions available by c
 
 The Home also contains recently accessed pipelines, releases, and reports. Each is represented by a tile. Clicking the tile provides associated details and allows you to work the pipeline, release, or report selected. Use the taskbar or click **View all** to access the Pipelines, Releases, or Reports pages.
 
-**Parent topic:** [Overview](../topics/c_node_overview.md)
-
