@@ -11,13 +11,13 @@ node ('ip-10-134-116-65.ec2.internal') {
    }
 
   // Mark the code save 'stage'....
-   stage ('Save)' {
+   stage ('Save') {
       sh "mv site/"
       archiveArtifacts artfacts: '**/*', fingerprint: true
    }
 
     // Mark the code upload 'stage'....
     stage ('Upload') {
-
+        sh "echo ls"
     }
 }
