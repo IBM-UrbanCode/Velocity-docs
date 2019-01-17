@@ -24,7 +24,7 @@ node ('ip-10-134-116-65.ec2.internal') {
    stage ('Save') {
       bat "cd site/"
       bat "dir"
-      archiveArtifacts artifacts: '*', fingerprint: true
+      archiveArtifacts artifacts: 'site/**/*', fingerprint: true
    }
 
     // Mark the code upload 'stage'....
