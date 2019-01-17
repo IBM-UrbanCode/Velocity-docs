@@ -4,10 +4,19 @@ node ('ip-10-134-116-65.ec2.internal') {
    stage ('Checkout') {
       // Checkout code from repository
       checkout scm
+      checkout([
+        $class: 'GitSCM',
+        branches: [[name: 'master']],
+        doGenerateSubmoduleConfigurations: false,
+        extensions: [],
+        submoduleCfg: [],
+        userRemoteConfigs: [[url: 'https://github.com/IBM-UrbanCode/mkdocs-windmill']]
+      ])
    }
 
    // Mark the code build 'stage'....
    stage ('Build') {
+      bat "set WINDMILL_DIR=mkdocs-windmill/mkdocs-windmill"
       bat "mkdocs build"
    }
 
