@@ -29,6 +29,21 @@ node ('ip-10-134-116-65.ec2.internal') {
 
     // Mark the code upload 'stage'....
     stage ('Upload') {
-        bat "dir"
+       step([$class: 'UCDeployPublisher',
+            siteName: 'UrbanCode Production',
+            component: [
+                $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
+                componentName: 'HCL Velocity Documentation',
+                delivery: [
+                    $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
+                    pushVersion: '${BRANCH_NAME}_${BUILD_NUMBER}',
+                    baseDir: pwd() + '/site',
+                    fileIncludePatterns: '**/*',
+                    fileExcludePatterns: '',
+                    pushProperties: '',
+                    pushDescription: 'Pushed from Jenkins'
+                ]
+            ]
+        ])
     }
 }
