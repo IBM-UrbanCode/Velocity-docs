@@ -23,12 +23,12 @@ node ('ip-10-134-116-65.ec2.internal') {
   // Mark the code save 'stage'....
    stage ('Save') {
       bat "cd site/"
-      bat "echo ls"
-      archiveArtifacts artfacts: '*', fingerprint: true
+      bat "dir"
+      archiveArtifacts artifacts: '*', fingerprint: true
    }
 
     // Mark the code upload 'stage'....
     stage ('Upload') {
-        bat "echo ls"
+        bat "dir"
     }
 }
