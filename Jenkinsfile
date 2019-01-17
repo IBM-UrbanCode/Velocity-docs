@@ -1,4 +1,5 @@
 node ('ip-10-134-116-65.ec2.internal') {
+
    // Mark the code checkout 'stage'....
    stage ('Checkout') {
       // Checkout code from repository
@@ -7,17 +8,17 @@ node ('ip-10-134-116-65.ec2.internal') {
 
    // Mark the code build 'stage'....
    stage ('Build') {
-      sh "mkdocs build"
+      bat "mkdocs build"
    }
 
   // Mark the code save 'stage'....
    stage ('Save') {
-      sh "mv site/"
+      bat "mv site/"
       archiveArtifacts artfacts: '**/*', fingerprint: true
    }
 
     // Mark the code upload 'stage'....
     stage ('Upload') {
-        sh "echo ls"
+        bat "echo ls"
     }
 }
