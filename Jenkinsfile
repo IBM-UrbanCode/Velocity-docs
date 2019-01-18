@@ -1,5 +1,6 @@
+env.MYTOOL_VERSION1 = '1.33'
 node ('ip-10-134-116-65.ec2.internal') {
-
+    env.MYTOOL_VERSION2 = '1.33'
     environment {
         DISABLE_AUTH = 'true'
         DB_ENGINE    = 'sqlite'
@@ -24,6 +25,7 @@ node ('ip-10-134-116-65.ec2.internal') {
 
     // Mark the code build 'stage'....
     stage ('Build') {
+        env.MYTOOL_VERSION3 = '1.33'
        // bat "set WINDMILL_DIR=theme/mkdocs-windmill"
        //bat "type mkdocs.yml"
       // bat "dir"
