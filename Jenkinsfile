@@ -26,7 +26,7 @@ node ('ip-10-134-116-65.ec2.internal') {
         bat "dir"
         bat "dir theme"
         bat "dir theme\\mkdocs_windmill"
-        bat "echo %WINDMILL_DIR%"
+        echo 'WINDMILL_DIR $WINDMILL_DIR %WINDMILL_DIR%'
         bat "mkdocs build"
     }
 
