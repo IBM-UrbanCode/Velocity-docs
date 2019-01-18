@@ -20,7 +20,9 @@ node ('ip-10-134-116-65.ec2.internal') {
 
    // Mark the code build 'stage'....
    stage ('Build') {
-      env.WINDMILL_DIR = 'theme/mkdocs_windmill' // Relative directory where the theme is downloaded
+      // Relative directory where the theme is downloaded
+      env.WINDMILL_DIR = 'theme/mkdocs_windmill'
+
       // Build documentation
       bat "mkdocs build"
    }
@@ -29,7 +31,7 @@ node ('ip-10-134-116-65.ec2.internal') {
    stage ('Save') {
       // Sanity check of site contents.
       bat "dir site"
-      
+
       // Save documentation in Jenkins
       archiveArtifacts artifacts: 'site/**/*', fingerprint: true
    }
@@ -60,6 +62,16 @@ node ('ip-10-134-116-65.ec2.internal') {
                     pushProperties: 'product=velocity\nproduct.version=${BRANCH_NAME}\nbuild.number=${BUILD_NUMBER}',
                     pushDescription: 'Pushed from Jenkins'
                 ]
+            ],
+            // Deploy the built version to test instance
+            deploy: [
+                $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
+                deployApp: 'HCL Documentation',
+                deployEnv: 'Test (uc-doc-test)',
+                deployProc: 'Upload Documentation',
+                deployReqProps: '',
+                deployVersions: 'HCL Velocity ${BRANCH_NAME} Docs:${BRANCH_NAME}_${BUILD_NUMBER}',
+                deployOnlyChanged: false
             ]
         ])
     }
