@@ -1,5 +1,11 @@
 node ('ip-10-134-116-65.ec2.internal') {
 
+    environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
+        WINDMILL_DIR = 'theme\\mkdocs_windmill'
+    }
+
    // Mark the code checkout 'stage'....
    stage ('Checkout') {
       // Checkout code from repository
@@ -15,17 +21,14 @@ node ('ip-10-134-116-65.ec2.internal') {
           ])
       }
    }
-   environment {
-       WINDMILL_DIR = 'theme\\mkdocs_windmill'
-   }
 
     // Mark the code build 'stage'....
     stage ('Build') {
        // bat "set WINDMILL_DIR=theme/mkdocs-windmill"
-       bat "type mkdocs.yml"
-       bat "dir"
-       bat "dir theme"
-       bat "dir theme\\mkdocs_windmill"
+       //bat "type mkdocs.yml"
+      // bat "dir"
+       //bat "dir theme"
+       //bat "dir theme\\mkdocs_windmill"
        echo 'WINDMILL_DIR $WINDMILL_DIR %WINDMILL_DIR%'
        bat "SET"
        bat "mkdocs build"
