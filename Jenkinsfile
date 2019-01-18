@@ -24,6 +24,7 @@ node ('ip-10-134-116-65.ec2.internal') {
       env.WINDMILL_DIR = 'theme/mkdocs_windmill'
 
       env.DOC_VERSION = '${BRANCH_NAME}_${BUILD_NUMBER}'
+      env.DOC_VERSIONN = env.DOC_VERSION
       bat "set"
 
       // Build documentation
