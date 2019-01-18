@@ -2,8 +2,10 @@ node ('ip-10-134-116-65.ec2.internal') {
 
    // Mark the code checkout 'stage'....
    stage ('Checkout') {
-      // Checkout code from repository
+      // Checkout Documentation code from repository
       checkout scm
+
+      // Checkout UrbanCode Windmill Theme
       dir('theme') {
           checkout([
             $class: 'GitSCM',
@@ -16,39 +18,39 @@ node ('ip-10-134-116-65.ec2.internal') {
       }
    }
 
-    // Mark the code build 'stage'....
-    stage ('Build') {
-        env.WINDMILL_DIR = 'theme/mkdocs_windmill'
-       // bat "set WINDMILL_DIR=theme/mkdocs-windmill"
-       //bat "type mkdocs.yml"
-      // bat "dir"
-       //bat "dir theme"
-       //bat "dir theme\\mkdocs_windmill"
-       echo 'WINDMILL_DIR $WINDMILL_DIR %WINDMILL_DIR%'
-       bat "SET"
-       bat "mkdocs build"
-    }
+   // Mark the code build 'stage'....
+   stage ('Build') {
+      env.WINDMILL_DIR = 'theme/mkdocs_windmill' // Relative directory where the theme is downloaded
+      // Build documentation
+      bat "mkdocs build"
+   }
 
   // Mark the code save 'stage'....
    stage ('Save') {
-      bat "cd site/"
-      bat "dir"
+      // Sanity check of site contents.
       bat "dir site"
+      
+      // Save documentation in Jenkins
       archiveArtifacts artifacts: 'site/**/*', fingerprint: true
    }
 
     // Mark the code upload 'stage'....
     stage ('Upload') {
+
+       // Add built documentation files as component version in UrbanCode Deploy
        step([$class: 'UCDeployPublisher',
             siteName: 'UrbanCode Production',
+            // Specify Component
             component: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
                 componentName: 'HCL Velocity ${BRANCH_NAME} Docs',
+                // Create Component and add to Application if it doesn't exist
                 createComponent: [
                     $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
                     componentTemplate: 'HCL Documentation Template',
                     componentApplication: 'HCL Documentation'
                 ],
+                // Add files to component verison
                 delivery: [
                     $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
                     pushVersion: '${BRANCH_NAME}_${BUILD_NUMBER}',
