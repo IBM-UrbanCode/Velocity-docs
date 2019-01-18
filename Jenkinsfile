@@ -17,6 +17,8 @@ node ('ip-10-134-116-65.ec2.internal') {
    // Mark the code build 'stage'....
    stage ('Build') {
       bat "set WINDMILL_DIR=mkdocs-windmill/mkdocs-windmill"
+      bat "type mkdocs.yml"
+      bat "dir mkdocs-windmill"
       bat "mkdocs build"
    }
 
@@ -24,6 +26,7 @@ node ('ip-10-134-116-65.ec2.internal') {
    stage ('Save') {
       bat "cd site/"
       bat "dir"
+      bat "dir site"
       archiveArtifacts artifacts: 'site/**/*', fingerprint: true
    }
 
