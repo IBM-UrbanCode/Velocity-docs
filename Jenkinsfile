@@ -21,7 +21,7 @@ node ('ip-10-134-116-65.ec2.internal') {
         environment {
             WINDMILL_DIR = 'theme/mkdocs-windmill'
         }
-        bat "set WINDMILL_DIR=theme/mkdocs-windmill"
+        // bat "set WINDMILL_DIR=theme/mkdocs-windmill"
         bat "type mkdocs.yml"
         bat "dir"
         bat "dir theme"
