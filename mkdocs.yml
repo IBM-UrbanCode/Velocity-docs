@@ -12,7 +12,7 @@ theme:
   # Set WINDMILL_DIR Environment Variable to use the below script.
   # Otherwise, specify the full path
   # custom_dir: <path-to-urbancode-windmill-theme>
-  custom_dir: !!python/object/apply:os.getenv ["WINDMILL_DIR"]
+  custom_dir: theme/mkdocs_windmill
 
   static_templates: [404.html]
   search_index_only: true
