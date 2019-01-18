@@ -18,7 +18,7 @@ node ('ip-10-134-116-65.ec2.internal') {
 
     // Mark the code build 'stage'....
     stage ('Build') {
-        env.WINDMILL_DIR = 'theme/mkdocs-windmill'
+        env.WINDMILL_DIR = 'theme/mkdocs_windmill'
        // bat "set WINDMILL_DIR=theme/mkdocs-windmill"
        //bat "type mkdocs.yml"
       // bat "dir"
