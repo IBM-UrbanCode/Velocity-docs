@@ -148,7 +148,7 @@ markdown_extensions:
 
 extra:
   history_buttons: false
-  version: 1.1.2
+  version: !!python/object/apply:os.getenv ["DOC_VERSION"]
   article_nav_top: false
   article_nav_bottom: false
   logo: img\UClogo.png

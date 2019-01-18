@@ -1,4 +1,6 @@
 node ('ip-10-134-116-65.ec2.internal') {
+    
+    env.DOC_VERSION = '${BRANCH_NAME}_${BUILD_NUMBER}'
 
    // Mark the code checkout 'stage'....
    stage ('Checkout') {
@@ -55,7 +57,7 @@ node ('ip-10-134-116-65.ec2.internal') {
                 // Add files to component verison
                 delivery: [
                     $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
-                    pushVersion: '${BRANCH_NAME}_${BUILD_NUMBER}',
+                    pushVersion: '${DOC_VERSION}',
                     baseDir: pwd() + '/site',
                     fileIncludePatterns: '**/*',
                     fileExcludePatterns: '',
@@ -70,7 +72,7 @@ node ('ip-10-134-116-65.ec2.internal') {
                 deployEnv: 'Test (uc-doc-test)',
                 deployProc: 'Upload Documentation',
                 deployReqProps: '',
-                deployVersions: 'HCL Velocity ${BRANCH_NAME} Docs:${BRANCH_NAME}_${BUILD_NUMBER}',
+                deployVersions: 'HCL Velocity ${BRANCH_NAME} Docs:${DOC_VERSION}',
                 deployOnlyChanged: false
             ]
         ])
