@@ -25,6 +25,7 @@ node ('ip-10-134-116-65.ec2.internal') {
 
       env.DOC_VERSION = '${BRANCH_NAME}_${BUILD_NUMBER}'
       env.DOC_VERSIONN = env.DOC_VERSION
+      env.DOC_VERSIONNN = '%BRANCH_NAME%_%BUILD_NUMBER%'
       bat "set"
 
       // Build documentation
