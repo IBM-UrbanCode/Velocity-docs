@@ -1,5 +1,3 @@
-env.DOC_VERSION = '${BRANCH_NAME}_${BUILD_NUMBER}'
-
 node ('ip-10-134-116-65.ec2.internal') {
 
    // Mark the code checkout 'stage'....
@@ -19,11 +17,15 @@ node ('ip-10-134-116-65.ec2.internal') {
           ])
       }
    }
+   environment {
+       DOC_VERSION = '${BRANCH_NAME}_${BUILD_NUMBER}'
+   }
 
    // Mark the code build 'stage'....
    stage ('Build') {
       // Relative directory where the theme is downloaded
       env.WINDMILL_DIR = 'theme/mkdocs_windmill'
+      bat "set"
 
       // Build documentation
       bat "mkdocs build"
@@ -33,7 +35,7 @@ node ('ip-10-134-116-65.ec2.internal') {
    stage ('Save') {
       // Sanity check of site contents.
       bat "dir site"
-      bat "set"
+
       // Save documentation in Jenkins
       archiveArtifacts artifacts: 'site/**/*', fingerprint: true
    }
@@ -57,7 +59,7 @@ node ('ip-10-134-116-65.ec2.internal') {
                 // Add files to component verison
                 delivery: [
                     $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
-                    pushVersion: '$DOC_VERSION',
+                    pushVersion: env.DOC_VERSION,
                     baseDir: pwd() + '/site',
                     fileIncludePatterns: '**/*',
                     fileExcludePatterns: '',
@@ -72,7 +74,7 @@ node ('ip-10-134-116-65.ec2.internal') {
                 deployEnv: 'Test (uc-doc-test)',
                 deployProc: 'Upload Documentation',
                 deployReqProps: '',
-                deployVersions: 'HCL Velocity ${BRANCH_NAME} Docs:$DOC_VERSION',
+                deployVersions: 'HCL Velocity ${BRANCH_NAME} Docs:' + env.DOC_VERSION,
                 deployOnlyChanged: false
             ]
         ])
