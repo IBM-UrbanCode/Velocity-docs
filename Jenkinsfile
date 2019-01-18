@@ -33,7 +33,12 @@ node ('ip-10-134-116-65.ec2.internal') {
             siteName: 'UrbanCode Production',
             component: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
-                componentName: 'HCL Velocity Documentation',
+                componentName: 'HCL Velocity Docs [${BRANCH_NAME}]',
+                createComponent: [
+                    $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
+                    componentTemplate: 'HCL Documentation Template',
+                    componentApplication: 'HCL Documentation'
+                ],
                 delivery: [
                     $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
                     pushVersion: '${BRANCH_NAME}_${BUILD_NUMBER}',
