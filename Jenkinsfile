@@ -33,7 +33,7 @@ node ('ip-10-134-116-65.ec2.internal') {
    stage ('Save') {
       // Sanity check of site contents.
       bat "dir site"
-
+      bat "set"
       // Save documentation in Jenkins
       archiveArtifacts artifacts: 'site/**/*', fingerprint: true
    }
@@ -57,7 +57,7 @@ node ('ip-10-134-116-65.ec2.internal') {
                 // Add files to component verison
                 delivery: [
                     $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
-                    pushVersion: '${DOC_VERSION}',
+                    pushVersion: '$DOC_VERSION',
                     baseDir: pwd() + '/site',
                     fileIncludePatterns: '**/*',
                     fileExcludePatterns: '',
@@ -72,7 +72,7 @@ node ('ip-10-134-116-65.ec2.internal') {
                 deployEnv: 'Test (uc-doc-test)',
                 deployProc: 'Upload Documentation',
                 deployReqProps: '',
-                deployVersions: 'HCL Velocity ${BRANCH_NAME} Docs:${DOC_VERSION}',
+                deployVersions: 'HCL Velocity ${BRANCH_NAME} Docs:$DOC_VERSION',
                 deployOnlyChanged: false
             ]
         ])
