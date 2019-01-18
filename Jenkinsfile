@@ -20,7 +20,7 @@ node ('ip-10-134-116-65.ec2.internal') {
    stage ('Build') {
       bat "set WINDMILL_DIR=theme/mkdocs-windmill"
       bat "type mkdocs.yml"
-      bat "dir mkdocs-windmill"
+      bat "dir theme"
       bat "mkdocs build"
    }
 
