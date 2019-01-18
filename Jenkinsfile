@@ -1,5 +1,3 @@
-env.DOC_VERSION = '${BRANCH_NAME}_${BUILD_NUMBER}'
-
 node ('ip-10-134-116-65.ec2.internal') {
 
    // Mark the code checkout 'stage'....
@@ -19,6 +17,8 @@ node ('ip-10-134-116-65.ec2.internal') {
           ])
       }
    }
+
+   env.DOC_VERSION = '${BRANCH_NAME}_${BUILD_NUMBER}'
 
    // Mark the code build 'stage'....
    stage ('Build') {
