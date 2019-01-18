@@ -36,7 +36,7 @@ node ('ip-10-134-116-65.ec2.internal') {
                 componentName: 'HCL Velocity ${BRANCH_NAME} Docs',
                 createComponent: [
                     $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
-                    componentTemplate: 'HCL Documentation Template',
+                    componentTemplate: 'HCL Velocity Documentation Template',
                     componentApplication: 'HCL Documentation'
                 ],
                 delivery: [
@@ -45,7 +45,7 @@ node ('ip-10-134-116-65.ec2.internal') {
                     baseDir: pwd() + '/site',
                     fileIncludePatterns: '**/*',
                     fileExcludePatterns: '',
-                    pushProperties: '',
+                    pushProperties: 'prod.version=${BRANCH_NAME}\nbuild.number=${BUILD_NUMBER}',
                     pushDescription: 'Pushed from Jenkins'
                 ]
             ]
