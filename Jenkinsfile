@@ -23,7 +23,7 @@ node ('ip-10-134-116-65.ec2.internal') {
       // Relative directory where the theme is downloaded
       env.WINDMILL_DIR = 'theme/mkdocs_windmill'
 
-      env.DOC_VERSION = '${BRANCH_NAME}_${BUILD_NUMBER}'
+      env.DOC_VERSION = "${BRANCH_NAME}_${BUILD_NUMBER}"
       env.DOC_VERSIONN = env.DOC_VERSION
       env.DOC_VERSIONNN = '%BRANCH_NAME%_%BUILD_NUMBER%'
       // env.DOC_VERSIONNNN = %BRANCH_NAME% %BUILD_NUMBER%
