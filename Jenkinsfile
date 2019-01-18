@@ -16,13 +16,19 @@ node ('ip-10-134-116-65.ec2.internal') {
       }
    }
 
-   // Mark the code build 'stage'....
-   stage ('Build') {
-      bat "set WINDMILL_DIR=theme/mkdocs-windmill"
-      bat "type mkdocs.yml"
-      bat "dir theme"
-      bat "mkdocs build"
-   }
+    // Mark the code build 'stage'....
+    stage ('Build') {
+        environment {
+            WINDMILL_DIR = 'theme/mkdocs-windmill'
+        }
+        bat "set WINDMILL_DIR=theme/mkdocs-windmill"
+        bat "type mkdocs.yml"
+        bat "dir"
+        bat "dir theme"
+        bat "dir theme/mkdocs-windmill"
+        bat "echo %WINDMILL_DIR%"
+        bat "mkdocs build"
+    }
 
   // Mark the code save 'stage'....
    stage ('Save') {
