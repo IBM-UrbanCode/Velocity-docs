@@ -18,12 +18,12 @@ node ('ip-10-134-116-65.ec2.internal') {
       }
    }
 
-   env.DOC_VERSION = '${BRANCH_NAME}_${BUILD_NUMBER}'
-
    // Mark the code build 'stage'....
    stage ('Build') {
       // Relative directory where the theme is downloaded
       env.WINDMILL_DIR = 'theme/mkdocs_windmill'
+
+      env.DOC_VERSION = '${BRANCH_NAME}_${BUILD_NUMBER}'
       bat "set"
 
       // Build documentation
@@ -41,6 +41,8 @@ node ('ip-10-134-116-65.ec2.internal') {
 
     // Mark the code upload 'stage'....
     stage ('Upload') {
+
+    env.DOC_VERSION = '${BRANCH_NAME}_${BUILD_NUMBER}'
 
        // Add built documentation files as component version in UrbanCode Deploy
        step([$class: 'UCDeployPublisher',
