@@ -38,8 +38,8 @@ node ('docs') {
       archiveArtifacts artifacts: 'site/**/*', fingerprint: true
    }
 
-    // Mark the code upload 'stage'....
-    stage ('Upload') {
+    // Upload site contents to UCD and deploy to AWS
+    stage ('Deploy') {
 
        // Add built documentation files as component version in UrbanCode Deploy
        step([$class: 'UCDeployPublisher',
@@ -65,7 +65,7 @@ node ('docs') {
                     pushDescription: 'Pushed from Jenkins'
                 ]
             ],
-            // Deploy the built version to test instance
+            // Deploy the built version to Test instance
             deploy: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
                 deployApp: 'HCL Documentation',
