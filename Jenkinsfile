@@ -15,7 +15,7 @@ node ('docs') {
             doGenerateSubmoduleConfigurations: false,
             extensions: [],
             submoduleCfg: [],
-            userRemoteConfigs: [[url: 'https://github.com/IBM-UrbanCode/mkdocs-windmill']]
+            userRemoteConfigs: [[url: 'https://github.com/UrbanCode/mkdocs-windmill']]
           ])
       }
    }
