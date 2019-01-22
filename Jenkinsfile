@@ -70,7 +70,7 @@ node ('docs') {
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
                 deployApp: 'HCL Documentation',
                 deployEnv: 'Test (uc-doc-test)',
-                deployProc: 'Upload Documentation',
+                deployProc: 'Upload Product Documentation',
                 deployReqProps: '',
                 deployVersions: 'HCL Velocity ${BRANCH_NAME} Docs:' + env.DOC_VERSION,
                 deployOnlyChanged: false
