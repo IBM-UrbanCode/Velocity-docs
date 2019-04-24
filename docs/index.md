@@ -1,6 +1,6 @@
-# HCL UrbanCode Velocity 1.1.2 documentation
+# HCL UrbanCode Velocity 1.1.x documentation
 
-Welcome to the UrbanCode Velocity 1.1.2 documentation, where you can find information about how to install, maintain, and use UrbanCode Velocity.
+Welcome to the UrbanCode Velocity 1.1.x documentation, where you can find information about how to install, maintain, and use UrbanCode Velocity.
 
 ### Navigating
 
