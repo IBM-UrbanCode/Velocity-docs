@@ -2,7 +2,7 @@
 
 Configure an email server.
 
-Obtain a token from your Urban Code Deploy server. When you create the UrbanCode™ Deploy token, specify **admin** as the user.
+Configure an SMTP server.
 
 This task requires that you are an UrbanCode Velocity administrator.
 
@@ -12,7 +12,7 @@ After you configure an integration, [create tasks to run UrbanCode Deploy applic
 2.   Click **Add Integration**, and then select **UrbanCode Deploy**. 
 3.   In the Add UrbanCode Deploy Integration window, enter a name for the integrations, and in the **UrbanCode Deploy server URL** field, define the URL. The format is `HTTPS://hostname:port`. For example, `HTTPS://sampleUCD:8443`.
 
-    **Note:** If you are running UrbanCode Deploy locally, you can substitute `HTTPS://host.docker.internal:port` in place of `localhost`.
+    **Note:** If you are running UrbanCode Deploy locally, you can substitute `HTTPS://host.docker.internal:port` in place of the usual `HTTPS://localhost:port`.
 
 4.   In the **UrbanCode Deploy access token** field, paste the token from UrbanCode Deploy. 
 5.   Click **Save**. The initial synchronization includes four months of data. Depending on the amount of data, this process can take some time.

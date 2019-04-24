@@ -2,9 +2,8 @@ site_name: 'UrbanCode Velocity'
 site_description: 'UrbanCode documentation.'
 site_author: 'UrbanCode'
 
-site_url: https://urbancode.hcldoc.com/velocity/11X/
+site_url: http://urbancode.hcldoc.com/velocity/11X/
 
-docs_dir: docs
 
 theme:
   name: null
@@ -14,38 +13,40 @@ theme:
   # custom_dir: <path-to-urbancode-windmill-theme>
   custom_dir: !!python/object/apply:os.getenv ["WINDMILL_DIR"]
 
+  # Copy settings from mkdocs_theme.yml, which is ignored by custom_dir themes.
   static_templates: [404.html]
   search_index_only: true
   include_search_page: true
 
 nav:
 - Welcome: ucv_version_welcome.md
-- Overview:
+- Overview: #
   - Overview of UrbanCode Velocity: com.uvelocity.doc/topics/c_overview_se.md
   - Introduction to releases and pipelines: com.uvelocity.doc/topics/c_overview_release.md
   - Home page: com.uvelocity.doc/topics/c_overview_se_homepage.md
-  # - Overview of the community edition: com.uvelocity.doc/topics/c_overview_ce.md
-  - Concepts: com.insights.doc/topics/c_overview_concepts.md
-  - Report overview: com.insights.doc/topics/c_overview_report.md
   - Key terminology: com.uvelocity.doc/topics/c_overview_terms.md
   - UrbanCode Velocity for GDPR Readiness: com.uvelocity.doc/topics/UCDVelocityGDPRguidelines.md
-  - Setup the environment: com.uvelocity.doc/topics/c_node_setup.md
-  - Getting started: com.insights.doc/topics/t_setup_gettingstarted.md
-- Installing the standard edition:
-  - Installing UrbanCode Velocity SE: com.uvelocity.doc/topics/c_install_se_roadmap.md
+- Installation roadmap:
+  - Overview: com.uvelocity.doc/topics/c_install_se_roadmap.md
   - Installing onto Docker Compose: com.uvelocity.doc/topics/t_install_se_docker.md
-  - Installing on Minikube: com.uvelocity.doc/topics/t_install_minikube.md
+  - Installing on Kubernetes: com.uvelocity.doc/topics/t_install_minikube.md
   - Installing on IBM Cloud Private: com.uvelocity.doc/topics/t_install_ICP.md
   - Installing onto OpenShift: com.uvelocity.doc/topics/t_install_se_openShift.md
   - Uninstalling the server: com.uvelocity.doc/topics/t_install_se_remove_ucv.md
-  # - Installing the Community Edition:
-  #   - Installation roadmap: com.insights.doc/topics/c_install_roadmap.md
-  #   - System requirements: com.insights.doc/topics/c_install_requirements.md
-  #   - Installing as a Docker Compose application: com.insights.doc/topics/t_install_docker.md
-  #   - Installing into a Kubernetes cluster: com.insights.doc/topics/t_install_kubernetes.md
-  #   - Kubernetes configuration properties: com.insights.doc/topics/c_install_kubernetes_config.md
 - Administration:
   - Overview: com.uvelocity.doc/topics/c_node_admin.md
+  - Configuring an email server: com.uvelocity.doc/topics/t_admin_emailServer.md
+  - Calendar settings: com.uvelocity.doc/topics/t_admin_calendar.md
+  - Security:
+    - Overview: com.uvelocity.doc/topics/c_node_security.md
+    - Roles and permissions: com.uvelocity.doc/topics/c_admin_roles.md
+    - Managing users: com.uvelocity.doc/topics/t_admin_authentication.md
+    - Managing user groups: com.uvelocity.doc/topics/cr_security_groups.md
+    - Managing teams: com.uvelocity.doc/topics/cr_security_teams.md
+    - Managing user permissions: com.uvelocity.doc/topics/cr_security_permissions.md
+    - Managing UrbanCode Deploy teams: com.uvelocity.doc/topics/cr_security_UCDteams.md
+    - Changing the Administrator password: com.uvelocity.doc/topics/t_admin_password.md
+  - Managing licenses: com.uvelocity.doc/topics/licenseManageHCL.md
   - Managing integrations:
     - Overview: com.uvelocity.doc/topics/c_node_integrations.md
     - Managing UrbanCode Deploy integrations: com.uvelocity.doc/topics/t_integration_UCD.md
@@ -53,27 +54,14 @@ nav:
     - Integrating deployment risk analysis: com.uvelocity.doc/topics/c_integration_dra.md
     - Integrating with JIRA: com.uvelocity.doc/topics/c_integration_jira.md
     - Integrating with ServiceNow: com.uvelocity.doc/topics/c_integration_servicenow.md
-  - Configuring an email server: com.uvelocity.doc/topics/t_admin_emailServer.md
-  - Calendar settings: com.uvelocity.doc/topics/t_admin_calendar.md
-  - Security:
-    - Security overview: com.uvelocity.doc/topics/c_node_security.md
-    - Roles and permissions: com.uvelocity.doc/topics/c_admin_roles.md
-    - Managing users: com.uvelocity.doc/topics/t_admin_authentication.md
-    - Managing user groups: com.uvelocity.doc/topics/cr_security_groups.md
-    - Managing teams: com.uvelocity.doc/topics/cr_security_teams.md
-    - Managing user permissions: com.uvelocity.doc/topics/cr_security_permissions.md
-    - Managing UrbanCode Deploy teams: com.uvelocity.doc/topics/cr_security_UCDteams.md
-  - License management:
-    - License overview: com.uvelocity.doc/topics/licenseManageHCL.md
-  # - Administration for the Community Edition:
-  - Environment:
-    - Managing logical environments: com.insights.doc/topics/t_admin_environments.md
-    - Environment mapping: com.insights.doc/topics/t_admin_environments_map.md
-  - Lines of Business:
-    - Managing lines of businesses: com.insights.doc/topics/t_admin_linesofbusiness.md
-    - Mapping lines of business: com.insights.doc/topics/t_admin_linesofbusiness_map.md
+    - Integrating quality and test data:
+      - Overview: com.uvelocity.doc/topics/c_node_qualityData.md
+      - Integrating code coverage data: com.uvelocity.doc/topics/quality-code-cover.md
+      - Accessing JUnit data: com.uvelocity.doc/topics/quality-junit-data.md
+      - Integrating SonarQube data: com.uvelocity.doc/topics/quality-sonarqube.md
+      - Accessing Visual Studio quality data: com.uvelocity.doc/topics/quality-vStudio.md
 - Release management:
-  - Release management overview: com.crelease.doc/topics/c_node_releases.md
+  - Overview: com.crelease.doc/topics/c_node_releases.md
   - Managing a release: com.crelease.doc/topics/cr_release_managedetails.md
   - Managing releases: com.crelease.doc/topics/cr_release_manage.md
   - Creating releases: com.crelease.doc/topics/cr_release_create.md
@@ -94,48 +82,50 @@ nav:
     - Resolving tasks: com.crelease.doc/topics/cr_deployRun_taskResolve.md
     - Importing tasks into deployment plans: com.crelease.doc/topics/cr_deployPlan_importTasks.md
     - Running scheduled deployments: com.crelease.doc/topics/cr_deployRun_scheduled.md
-- Tasks:
-  - Tasks overview: com.crelease.doc/topics/cr_task_ov.md
-  - Managing tasks: com.crelease.doc/topics/cr_task_manage.md
-  - Creating tasks: com.crelease.doc/topics/cr_task_create.md
-  - Managing task dependencies: com.crelease.doc/topics/cr_task_depend.md
-  - Creating task groups: com.crelease.doc/topics/cr_task_groups.md
-  - Managing task groups: com.crelease.doc/topics/cr_task_groups_manage.md
-  - Managing task tags: com.crelease.doc/topics/cr_task_tags.md
-  - Creating run another plan tasks: com.crelease.doc/topics/cr_taskType_another.md
-  - Creating delay tasks: com.crelease.doc/topics/cr_taskType_delay.md
-  - Deployment risk analysis tasks: com.crelease.doc/topics/cr_taskType_DRA.md
-  - Creating email tasks: com.crelease.doc/topics/cr_taskType_email.md
-  - Creating header/note tasks: com.crelease.doc/topics/cr_taskType_header.md
-  - Creating Jenkins tasks: com.crelease.doc/topics/cr_taskType_Jenkins.md
-  - Creating manual tasks: com.crelease.doc/topics/cr_taskType_manual.md
-  - Creating ServiceNow tasks: com.crelease.doc/topics/cr_taskType_serviceNow.md
-  - Creating UrbanCode Deploy tasks: com.crelease.doc/topics/cr_taskType_UCD.md
-  - Creating wait for approval tasks: com.crelease.doc/topics/cr_taskType_waitForApproval.md
-- Properties:
-  - Properties overview: com.crelease.doc/topics/cr_properties_ov.md
-  - Creating properties: com.crelease.doc/topics/cr_properties_create.md
-  - Using properties: com.crelease.doc/topics/cr_properties_ref.md
+  - Tasks:
+    - Overview: com.crelease.doc/topics/cr_task_ov.md
+    - Managing tasks: com.crelease.doc/topics/cr_task_manage.md
+    - Creating tasks: com.crelease.doc/topics/cr_task_create.md
+    - Managing task dependencies: com.crelease.doc/topics/cr_task_depend.md
+    - Creating task groups: com.crelease.doc/topics/cr_task_groups.md
+    - Managing task groups: com.crelease.doc/topics/cr_task_groups_manage.md
+    - Managing task tags: com.crelease.doc/topics/cr_task_tags.md
+    - Creating run another plan tasks: com.crelease.doc/topics/cr_taskType_another.md
+    - Creating delay tasks: com.crelease.doc/topics/cr_taskType_delay.md
+    - Deployment risk analysis tasks: com.crelease.doc/topics/cr_taskType_DRA.md
+    - Creating email tasks: com.crelease.doc/topics/cr_taskType_email.md
+    - Creating header/note tasks: com.crelease.doc/topics/cr_taskType_header.md
+    - Creating Jenkins tasks: com.crelease.doc/topics/cr_taskType_Jenkins.md
+    - Creating manual tasks: com.crelease.doc/topics/cr_taskType_manual.md
+    - Creating ServiceNow tasks: com.crelease.doc/topics/cr_taskType_serviceNow.md
+    - Creating UrbanCode Deploy tasks: com.crelease.doc/topics/cr_taskType_UCD.md
+    - Creating wait for approval tasks: com.crelease.doc/topics/cr_taskType_waitForApproval.md
+  - Properties:
+    - Overview: com.crelease.doc/topics/cr_properties_ov.md
+    - Creating properties: com.crelease.doc/topics/cr_properties_create.md
+    - Using properties: com.crelease.doc/topics/cr_properties_ref.md
 - Pipelines:
-  - Pipelines overview: com.crelease.doc/topics/cr_pipelines_ov.md
+  - Overview: com.crelease.doc/topics/cr_pipelines_ov.md
   - Creating pipelines: com.crelease.doc/topics/cr_pipeline_create.md
   - Managing pipelines: com.crelease.doc/topics/cr_pipeline_manage.md
   - Running deployments with pipelines: com.crelease.doc/topics/cr_pipeline_run.md
 - Reports:
   - Overview: com.uvelocity.doc/topics/c_node_reports.md
-  - Custom reports: com.insights.doc/topics/c_reports_custom.md
-  - Cards: com.insights.doc/topics/c_reports_card.md
-  - Charts: com.insights.doc/topics/c_reports_charts.md
-  - Delivery Transformation reports: com.insights.doc/topics/c_reports_efficiency.md
-  - Events: com.insights.doc/topics/c_reports_events.md
+  - Custom reports:
+    - Overview: com.insights.doc/topics/c_reports_custom.md
+    - Cards: com.insights.doc/topics/c_reports_card.md
+    - Charts: com.insights.doc/topics/c_reports_charts.md
+  - Delivery Transformation reports:
+    - Overview: com.insights.doc/topics/c_reports_efficiency.md
+    - Events: com.insights.doc/topics/c_reports_events.md
 - How to:
-  - About: com.uvelocity.doc/topics/c_node_howto.md
-  - Access the user interface: com.insights.doc/topics/t_ui_access.md
+  - Overview: com.uvelocity.doc/topics/c_node_howto.md
+  - Accessing the user interface: com.insights.doc/topics/t_ui_access.md
   - Create a report: com.insights.doc/topics/t_report_create.md
-  - Filter report data: com.insights.doc/topics/t_filter_data.md
-  - Format Custom reports: com.insights.doc/topics/t_reports_format.md
-  - Manage reports: com.insights.doc/topics/t_report_manage.md
-  - Share reports: com.insights.doc/topics/t_reports_share.md
+  - Filtering report data: com.insights.doc/topics/t_filter_data.md
+  - Formatting Custom reports: com.insights.doc/topics/t_reports_format.md
+  - Managing reports: com.insights.doc/topics/t_report_manage.md
+  - Sharing reports: com.insights.doc/topics/t_reports_share.md
 - Troubleshooting:
   - Overview: com.uvelocity.doc/topics/c_node_troubleshoot.md
   - Contacting support: com.insights.doc/topics/c_troubleshoot_contactsupport.md

@@ -1,14 +1,15 @@
 # Managing integrations
 
-Using UrbanCode Velocity you can run deployments and request reports based on your criterion from data retrieved from your UrbanCode Deploy environment. In addition, you can use data from other external tools, such as Jenkins, ServiceNow, and the IBM Cloud DevOps Insights service.
+With UrbanCode Velocity you can run deployments and request reports based on your criterion from data retrieved from your UrbanCode Deploy environment. In addition, you can use data from other external tools, such as Jenkins, ServiceNow, and the IBM Cloud DevOps Insights service.
 
 Add integrations with external tools to extend your pipelines, releases, and reports.
 
--   With [UrbanCode Deploy integrations](t_integration_UCD.md#), you can request reports and add applications to pipelines and deployment plans. [Add ServiceNow tasks](c_integration_servicenow.md#)
+-   With [UrbanCode Deploy integrations](t_integration_UCD.md#), you can request reports and add applications to pipelines and deployment plans.
 -   [Jenkins integrations](t_integration_Jenkins.md#) enable you to add Jenkins Jobs to pipelines deployments.
--   to deployment plans and manage ServiceNow change requests.
+-    [Add ServiceNow tasks](c_integration_servicenow.md#) to deployment plans and manage ServiceNow change requests.
 -   [Add Jira projects](c_integration_jira.md#) to releases and use the issue track to manage Jira issues.
 -   Integrate with IBM Cloud Insights and [use deployment risk analysis tasks, DRA](c_integration_dra.md#), with your pipelines to provide quality gates between stages.
+-   [Integrate quality and test data.](c_node_qualityData.md#)
 
 -   **[Configuring UrbanCode Deploy integrations](../topics/t_integration_UCD.md)**  
 Use UrbanCode Deploy applications in your deployments and pipelines.
@@ -20,6 +21,8 @@ Add the results from unit tests, security scans, and other code coverage tools t
 Seamlessly incorporate Jira projects into your releases.
 -   **[Integrating with ServiceNow](../topics/c_integration_servicenow.md)**  
 Create and manage ServiceNow change requests with UrbanCode Velocity. Update change requests with Velocity tasks and then react to status changes. Control deployment progress with change request updates.
+-   **[Integrating quality data](../topics/c_node_qualityData.md)**  
+Integrate test data into your workflows, pipelines, releases, and reports.
 
 **Parent topic:** [Administration](../topics/c_node_admin.md)
 

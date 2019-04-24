@@ -1,6 +1,6 @@
 # Home page
 
-Use the Home page to view pipelines, releases, and reports defined in your environment.
+Use the Home page, or Dashboard, to view pipelines, releases, and reports defined in your environment.
 
 Access the Home page and user interface using the user interface URL provided by your administrator. To have access to the interface, the administrator must have authenticated your access. After providing your credentials, the Home page displays. From the Home page, you can view pipelines, releases, and reports.
 
@@ -14,4 +14,6 @@ If you have administrator privileges, there are several functions available by c
 -   Setup an email server
 
 The Home also contains recently accessed pipelines, releases, and reports. Each is represented by a tile. Clicking the tile provides associated details and allows you to work the pipeline, release, or report selected. Use the taskbar or click **View all** to access the Pipelines, Releases, or Reports pages.
+
+**Parent topic:** [Overview](../topics/c_node_overview.md)
 

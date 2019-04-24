@@ -1,15 +1,18 @@
 # Installing as an OpenShift application
 
-The ID that you use must be able to make changes to the host environment. The tools required by all installation scenarios include the following items:
+The ID that you use to install the product must be able to make changes to the host environment. The tools required by all installation scenarios include the following items:
 
--   Docker. The commands used during installation retrieve files and container images from remote locations. If you are unable to access the internet during installation, the install images will need to have been previously downloaded and placed in a Docker repository that the installation commands can access.
+-   Docker installed on the host system.
+-   Internet connection. During installation, files and container images are retrieved from remote locations. If you are unable to access the internet during installation, you can download the files beforehand and perform an offline installation.
+
+    **Note:** The installation files used for offline installation are not the same as those used for internet-connected installation. Ensure that you download the right file for you installation environment.
+
 -   IBM UrbanCode™ Deploy Version 6.2.3 and later. Although not strictly required, many UrbanCode™ Velocity features assume integration with UrbanCode Deploy. It doesn't matter which product you install first.
 
     If you are using an UrbanCode Deploy version prior to V6.2.5, you must install the patch located at the following website: [http://public.dhe.ibm.com/software/products/UrbanCode/plugins/ucsync/patches/ibmucd/](http://public.dhe.ibm.com/software/products/UrbanCode/plugins/ucsync/patches/ibmucd/). Select from the index the appropriate version that is installed on your computer.
 
     UrbanCode Velocity can connect to an UrbanCode Deploy server on the same network. If you install UrbanCode Velocity with Kubernetes, the Kubernetes cluster must be on the same network as the UrbanCode Deploy server.
 
--   Git and a GitHub account.
 
 In addition to the requirements for all installation scenarios, you need the following items:
 
@@ -32,28 +35,12 @@ oc adm policy add-scc-to-group anyuid system:authenticated
 
 You will install UrbanCode Velocity into a OpenShift project. During installation, you configure a MongoDB for your project, add the UrbanCode Velocity service to your OpenShift project catalog, and create a route that makes the UrbanCode Velocity application publicly accessible.
 
-1.    [Download the installation file for you environment](https://public.dhe.ibm.com/software/products/UrbanCode/Velocity/latest/). The download page has installation files for all supported platforms. Select the file appropriate for you environment:
-
-    -   Linux: velocity-install-docker-compose-linux
-    -   Windows: velocity-install-docker-compose-win.exe
-    -   Mac OS: velocity-install-docker-compose-macos
-    You can use a shell command to download the file. For example, if you are installing the product on Linux®, you can download the file with a command like this one:
-
-    ```
-    wget https://public.dhe.ibm.com/software/products/UrbanCode/Veloc
-    ity/latest/velocity-install-docker-compose-linux
-    ```
-
-2.   Run the downloaded executable file, and then select your installation scenario. For example, on Linux use the following shell command:
-
-    ```
-    ./velocity-install-docker-compose-linux
-    ```
-
+1.   Download the installation file for your environment. [Visit the FlexNet download center and select the file for your environment.](https://www.hcltech.com/products-and-platforms/contact-support-sales) 
+2.   Run the downloaded executable file. 
 3.   At the **Enter the location where the Velocity files will be installed** prompt, specify where to put the installation files. 
 4.   From the OpenShift dashboard, create a project for UrbanCode Velocity. When the project is created, in the **My Projects**area, select the project, and then click **Browse Catalog**.
-5.   Install the UrbanCode Velocity service in the project catalog by completing the following steps:. 
-    1.   Extract the yaml file from the archive, velocity-se-<version number\>-openshift.tar.gz, that you installed earlier. The name of the yaml is velocity-se-<version number\>-openshift.yaml.
+5.   Install the UrbanCode Velocity service template in the project catalog by completing the following steps:. 
+    1.   If it isn't already extracted, extract the yaml file from the archive, velocity-se-<version number\>-openshift.tar.gz, that you installed earlier. The name of the yaml is velocity-se-<version number\>-openshift.yaml.
     2.   From OpenShift project catalog, use the **Add to Project** \> **Import YAML/JSON** command to import the velocity-se-<version number\>-openshift.yaml file. The service is added to the catalog.
     3.   Select **Create**, and then uncheck **Process the Template**and check **Save Template**. After refreshing the browser, you see the UrbanCode Velocity service in the OpenShift project catalog.
 6.   Create a MongoDB service for the project by completing the following steps: 
@@ -64,7 +51,7 @@ You will install UrbanCode Velocity into a OpenShift project. During installatio
 
     3.   Click **Create**. 
     4.   On the MogoDB has been created page, copy the `Connection URL` string and store it in a readily-accessible location, then close configuration window. You use the connection string to configure your UrbanCode Velocity project.
-7.   Create UrbanCode Velocity service by completing these steps. 
+7.   Create an UrbanCode Velocity service by completing these steps. 
     1.   From project catalog, select **Velocity** ![OpenShift Catalog](../images/OpenShiftCatalog.PNG). The Velocity configuration window is displayed.
     2.   Click **Next**, and then, in the **Name** field, enter a service name. 
     3.   In the **Hostname** field, enter the service host name. 

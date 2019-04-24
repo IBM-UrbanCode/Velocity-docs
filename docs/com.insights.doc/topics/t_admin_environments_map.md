@@ -21,5 +21,3 @@ Complete the following steps to map your UrbanCode environments to a logical env
         4.  Click **Add**. The environments mapped are displayed.
 3.   Select a color to represent the environment in reports. Click the menu arrow in the **Choose Color** field. Move the slide bar to the color family. Move the cursor to the point in the box for the color. Optionally, you can type the HTML color code. After you have selected a color, click **Choose**. 
 
-**Parent topic:** [Managing logical environments](../../com.insights.doc/topics/t_admin_environments.md)
-

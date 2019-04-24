@@ -7,7 +7,7 @@ You can add environments, or stages, at any time and rearrange them as needed. E
 To modify a pipeline, complete the following steps:
 
 1.   On the Pipeline detail page, click **Add Environment** to create an environment, or stage. Drag the stage to a new location in the pipeline. You can re-order the stages except for the first stage, **Input**. To rename the stage, select **Edit environment** from the stage context menu.
-2.   To map an UrbanCode Deploy application environment to the stage, complete the following steps: 
+2.   To map an [UrbanCode Deploy application environment](../../com.insights.doc/topics/t_admin_environments_map.md#) to the stage, complete the following steps: 
     1.   For the application where you want to add the environment, click ![Add button](../images/event-add.png), and then select **Manage logical environment**. 
     2.   On the Map app environments to logical environment window, select an environment, and then click **Save**. The environment is added to the stage.
     3.   To change the mapped environment, select **Edit application environment**. 

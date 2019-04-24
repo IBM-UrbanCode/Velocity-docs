@@ -17,5 +17,3 @@ Before starting the installation process verify that the necessary requirements 
 
 You can dynamically generate a system requirements report using the [Software Product Compatibility Reports \(SPCR\)](https://www.ibm.com/software/reports/compatibility/clarity/index.html) tool.
 
-**Parent topic:** [Installation roadmap](../../com.uvelocity.doc/topics/c_install_se_roadmap.md)
-

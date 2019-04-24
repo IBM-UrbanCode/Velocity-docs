@@ -37,5 +37,3 @@ Each of these tasks must be performed to complete the install process. However, 
     After the installation is complete, you can access the configuration pages to integrate with UrbanCode Deploy and authenticate users. The integration process is required. No report data is available until the integration process is complete. Authenticating users to access reports is not required. However; until users are authenticated only the administrator user has access.
 
 
-**Parent topic:** [Installation roadmap](../../com.uvelocity.doc/topics/c_install_se_roadmap.md)
-

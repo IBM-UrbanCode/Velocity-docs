@@ -18,6 +18,8 @@ To prepare a team, you create the team and then add users or user groups to it. 
 Permissions define the scope of user actions. Administrators assign permissions when they add users to teams. Permissions are granted to individual users or user groups. Users can have different permissions for different teams.
 -   **[Managing UrbanCode Deploy teams](../topics/cr_security_UCDteams.md)**  
 When an UrbanCode Deploy team is imported, in addition to the roster of team members, all applications that are managed by the team are also imported. Imported applications can be used in any deployment that is managed by the team.
+-   **[Changing the Administrator password](../topics/t_admin_password.md)**  
+Use the Users page to change the administrator's password.
 
 **Parent topic:** [Administration](../topics/c_node_admin.md)
 

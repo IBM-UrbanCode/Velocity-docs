@@ -79,5 +79,3 @@ The installation instructions are specific to the Linux™ operating system.
 
 After the installation is complete, access the administrator user interface to complete the configuration. The default URL is https://hostname/admin, where hostname is the host name of the computer where the server is running. The user name is admin and the default password is admin. A different password can be specified in the docker-compose.yml file.
 
-**Parent topic:** [Installation roadmap](../../com.uvelocity.doc/topics/c_install_se_roadmap.md)
-

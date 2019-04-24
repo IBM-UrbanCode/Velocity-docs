@@ -81,8 +81,3 @@ Install UrbanCode™ Velocity into a Kubernetes cluster using Helm commands. The
 
 Access the administrator user interface to complete the configuration. Refer to the NOTES section displayed after the `helm install` command completes for the location of the administrator user interface.
 
--   **[Kubernetes configuration properties](../../com.insights.doc/topics/c_install_kubernetes_config.md)**  
-There are a number of configuration properties that can be specified during the install process.
-
-**Parent topic:** [Installation roadmap](../../com.uvelocity.doc/topics/c_install_se_roadmap.md)
-

@@ -34,5 +34,3 @@ mongodb://username:password@service\_name/URL:port/database\_name
 |ui.service.externalSSLPort|6443|Maps the user interface node internal SSL port to the external SSL port.|
 |url.protocol|https|The type of protocol.|
 
-**Parent topic:** [Installing into a Kubernetes cluster](../../com.insights.doc/topics/t_install_kubernetes.md)
-
