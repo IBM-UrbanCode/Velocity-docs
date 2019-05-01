@@ -17,6 +17,7 @@ theme:
   static_templates: [404.html]
   search_index_only: true
   include_search_page: true
+  google_analytics: ['UA-139401017-1', 'UrbanCode.com']
 
 nav:
 - Welcome: ucv_version_welcome.md
